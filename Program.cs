@@ -7,17 +7,15 @@ namespace TreeSort
     {
         static void Main(string[] args)
         {
-            Console.Write("n = ");
-            var n = int.Parse(Console.ReadLine());
-
-            var a = new List<string>();
-            var random = new Random();
-            for (int i = 0; i < n; i++)
-                a.Add(random.Next(0, 100).ToString());
-
-            Console.WriteLine("Random Array: {0}", string.Join(" ", a));
-
-            Console.WriteLine("Sorted Array: {0}", string.Join(" ", TreeSort.GetSortedList(a)));
+            Console.Write("Input data: ");
+            var input = Console.ReadLine().Split(" ");
+            var data = new List<string>();
+            foreach (var item in input)
+                data.Add(item);
+            Console.Write("Sorted data: ");
+            foreach (var item in TreeSort.GetSortedList(data))
+                Console.Write(item + " ");
+            Console.ReadKey();
         }
     }
 }
